@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.prueba.spring.entidades.User;
+import com.prueba.spring.entidades.UserLogin;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -32,10 +33,10 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User loginUser(String mail, String pass) {
-		String sql = " SELECT FROM users where email= ? AND pass= ? ";
+	public User loginUser(UserLogin userLogin) {
+		String sql = " SELECT FROM users where email='"+userLogin.getMail()+"' AND pass='"+ userLogin.getPass()+ "'";
 		User user = (User) jdbcTemplate.queryForObject(sql, new Object[] 
-		{mail,pass}, new RowMapper<User>() {
+		{userLogin}, new RowMapper<User>() {
 			
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
