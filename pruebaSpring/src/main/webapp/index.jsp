@@ -6,13 +6,13 @@
         <title>Welcome</title>
     </head>
     <body>
-        <form action="registrar">
-        	<input type="submit" value="Registrar">
-        
-        </form>
-        <br>
-        <form action="userLogin">
-        	<input type="submit" value="Login">
-        </form>
+    	<table align="center">
+            <tr>
+                <td><a href="login">[Login]</a>
+                </td>
+                <td><a href="registrar">[Registrar]</a>
+                </td>
+            </tr>
+        </table>
     </body>
     </html>

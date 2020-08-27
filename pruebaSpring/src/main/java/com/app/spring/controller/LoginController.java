@@ -20,7 +20,7 @@ public class LoginController {
 	@Autowired
 	private UserDAO userDAO;
 	
-	@RequestMapping(value="/userLogin", method=RequestMethod.GET)
+	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView userLogin(HttpServletRequest req, HttpServletResponse res) {
 		
 		ModelAndView mav = new ModelAndView("userLogin");

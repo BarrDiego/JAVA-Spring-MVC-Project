@@ -1,5 +1,6 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <html>
         <head>
@@ -14,7 +15,7 @@
                             <form:label path="mail">Usuario: Su correo electronico </form:label>
                         </td>
                         <td>
-                            <form:input path="mail" name="mail" id="mail" />
+                            <form:input type="text" path="mail" name="mail" id="mail" />
                         </td>
                     </tr>
                     <tr>
@@ -22,13 +23,13 @@
                             <form:label path="pass">Password:</form:label>
                         </td>
                         <td>
-                            <form:password path="pass" name="pass" id="pass" />
+                            <form:input type="password" path="pass" name="pass" id="pass" />
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td align="left">
-                            <form:button id="login" name="login">Login</form:button>
+                            <form:button id="login" name="login">Login</form:button>>
                         </td>
                     </tr>
                     <tr></tr>

@@ -1,5 +1,6 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
         <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -7,9 +8,7 @@
         </head>
         <body>
             <form:form id="regForm" modelAttribute="user" action="bienvenido" method="post">
-                <table align="center">
-                   
-                   
+                <table align="center">            
                     <tr>
                         <td>
                             <form:label path="nombre">Nombre</form:label>
@@ -55,7 +54,7 @@
                         <td><a href="index.jsp">Home</a>
                         </td>
                     </tr>
-                </table>
+                </table> 
             </form:form>
         </body>
         </html>
