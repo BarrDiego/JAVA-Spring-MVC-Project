@@ -6,13 +6,18 @@
         <title>Welcome</title>
     </head>
     <body>
-        <form action="registrar">
-        	<input type="submit" value="Registrar">
-        
-        </form>
-        <br>
-        <form action="userLogin">
-        	<input type="submit" value="Login">
-        </form>
+        <table>
+            <tr>
+                <td>Bienvenido ${nombre}</td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td><a href="index.jsp">Home</a>
+                </td>
+            </tr>
+        </table>
     </body>
     </html>
