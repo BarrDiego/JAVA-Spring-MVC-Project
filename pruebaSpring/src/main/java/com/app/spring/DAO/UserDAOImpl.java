@@ -12,6 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import com.app.spring.entidades.User;
 import com.app.spring.entidades.UserLogin;
+import java.util.List;
+
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -34,11 +36,17 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User loginUser(UserLogin userLogin) {
-		String sql = " SELECT FROM users where email='"+userLogin.getMail()+"' AND pass='"+ userLogin.getPass()+ "'";
-		User user = (User) jdbcTemplate.queryForObject(sql, new Object[] 
-		{userLogin}, new RowMapper<User>() {
-			
-			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+		String sql = " SELECT * FROM users where email='"+userLogin.getMail()+"' AND pass='"+ userLogin.getPass()+ "'";
+		
+                List <User> users = jdbcTemplate.query(sql, new UserMapper());              
+ 
+                return users.size() > 0 ? users.get(0) : null;
+	}
+}    
+
+        class UserMapper implements RowMapper<User> {
+
+        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
 				User user = new User();
 				user.setId(rs.getInt(1));
@@ -48,11 +56,8 @@ public class UserDAOImpl implements UserDAO {
 				user.setPass(rs.getString(5));
 				return user;
 			}
-		});
-		
-		return user;
-	}	
+    }
  
-}
+
 
 	
