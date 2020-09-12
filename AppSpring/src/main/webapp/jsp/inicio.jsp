@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,11 +13,13 @@
         <title>JSP Page</title>
     </head>
     <body style="background-color: #FCEABA">
-        <h1>Bienvenido a su Inicio</h1>
+         <h1> Bienvenido ${nombre} a su Gestor de Productos</h1>
         <hr>
         <br>
-        <p> Que desea hacer ${nombre} ?</p>
-        
+  
+        <a href="productos">[ir a Gestor de Productos]</a>
+         <hr>
+        <br> 
         <a href="index.jsp">[Home]</a>
     </body>
 </html>

@@ -1,5 +1,6 @@
 package com.app.spring.controller;
 
+import com.app.spring.DAO.ProductoDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.app.spring.DAO.UserDAO;
+import com.app.spring.entidades.Producto;
 import com.app.spring.entidades.User;
 import com.app.spring.entidades.UserLogin;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 @Controller
 public class LoginController {
@@ -37,7 +40,8 @@ public class LoginController {
 		User user = userDAO.loginUser(userLogin);
 		
 		if(user != null) {
-			mav = new ModelAndView("inicio");
+			
+            mav = new ModelAndView("inicio");
 			mav.addObject("nombre",user.getNombre());
 		}else {
 			mav = new ModelAndView("userLogin");
@@ -47,6 +51,6 @@ public class LoginController {
 		return mav;
 		
 	}
-	
-
+           
+    
 }
